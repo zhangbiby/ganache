@@ -1,5 +1,7 @@
 ## ZIRCON
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/trufflesuite/zircon.svg)](https://greenkeeper.io/)
+
 ZIRCON is an Electron based UI for TestRPC. The goals of the project are:
 
 - Provide an easier path to getting started with Ethereum Blockchain.
