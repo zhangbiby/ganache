@@ -30,7 +30,8 @@ class ConfigScreen extends PureComponent {
     this.state = {
       settings: _.cloneDeep(props.settings),
       validationErrors: {},
-      activeIndex: 0
+      activeIndex: 0,
+      advancedSettings: false
     }
   }
 
@@ -180,6 +181,16 @@ class ConfigScreen extends PureComponent {
     this.handleInputChange(e)
   }
 
+  toggleAdvancedSettings = () => {
+    var toggleState = !this.state.advancedSettings
+
+    this.setState({
+      advancedSettings: toggleState
+    })
+
+    this.forceUpdate()
+  }
+
   invalidConfig = () => {
     let hasValidationErrors = false
     for (let key of Object.keys(this.state.validationErrors)) {
@@ -194,7 +205,8 @@ class ConfigScreen extends PureComponent {
       settings: this.state.settings,
       handleInputChange: this.handleInputChange,
       validateChange: this.validateChange,
-      validationErrors: this.state.validationErrors
+      validationErrors: this.state.validationErrors,
+      advancedSettings: this.state.advancedSettings
     })
 
     return (
@@ -220,7 +232,20 @@ class ConfigScreen extends PureComponent {
             </div>
           </div>
           <div className="ConfigCard">
-            { activeTab } 
+            <div id="AdvancedSwitch">
+              <h4>ADVANCED SETTINGS</h4>
+              <div className="Switch">
+                <input
+                  type="checkbox"
+                  name="advancedSettings"
+                  id="AdvancedSettings"
+                  checked={this.state.advancedSettings}
+                  onChange={this.toggleAdvancedSettings}
+                />
+                <label htmlFor="AdvancedSettings">ADVANCED SETTINGS</label>
+              </div>
+            </div>
+            { activeTab }
           </div>
         </div>
       </main>

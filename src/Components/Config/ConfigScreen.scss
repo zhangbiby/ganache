@@ -141,6 +141,19 @@
 
     box-shadow: 0 -40px 40px -40px rgba(0,0,0,0.15);
 
+    #AdvancedSwitch {
+      display: flex;
+      float: right;
+      margin-right: 1.5rem;
+
+      h4 {
+        margin: auto .5rem auto 0;
+        font-style: italic;
+        font-weight: bold;
+        color: var(--primary-color);
+      }
+    }
+
     p {
       margin: 0;
     }
@@ -165,6 +178,12 @@
     section {
       display: flex;
       flex-direction: column;
+
+      &.AdvancedSetting h4 {
+        font-style: italic;
+        font-weight: bold;
+        color: var(--primary-color);
+      }
     }
 
     .Row {
